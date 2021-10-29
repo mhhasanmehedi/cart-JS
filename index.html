@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./img/favIcon.png" />
+    <title>Shopping Cart | JS</title>
+    <!-- Font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- custom style -->
+    <link rel="stylesheet" href="./css/cart.css" />
+  </head>
+  <body onload="onLoad()">
+    <!-- loading  -->
+    <div id="loading"></div>
+    <!-- main area  -->
+    <main id="main">
+      <!-- nav area -->
+      <nav>
+        <div class="logo">
+          <a href="./index.html">Shop<span>.</span></a>
+        </div>
+        <div class="main__menu">
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a id="cart"
+            ><i class="fas fa-shopping-cart"></i
+            ><span id="showNumber">0</span></a
+          >
+        </div>
+      </nav>
+
+      <!-- Product area -->
+      <div class="product__container"></div>
+
+      <!-- Modal Box -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="cart__top">
+            <h3>Cart</h3>
+            <span class="close">&times;</span>
+          </div>
+          <div class="cart__container"></div>
+          <div style="font-size: 20px" class="total__price">
+            <p>Total Price: ৳ 0.00</p>
+          </div>
+          <div class="cart__footer">
+            <button class="clear__all" onclick="clearAll()">Clear All</button>
+            <button class="checkout">Checkout</button>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="#main"
+        style="
+          position: fixed;
+          text-decoration: none;
+          color: black;
+          right: 0;
+          bottom: 0;
+          font-size: 50px;
+          width: 50px;
+          height: 50px;
+          text-align: center;
+          line-height: 50px;
+          background: purple;
+        "
+      >
+        <i class="fas fa-angle-double-up updown"></i>
+      </a>
+    </main>
+    <script src="./js/cart.js"></script>
+    <script>
+      var preloader = document.getElementById("loading");
+
+      function onLoad() {
+        preloader.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
